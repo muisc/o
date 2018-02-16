@@ -24,28 +24,7 @@
     <meta name="twitter:card" content="MUISC">
 
     <style>
-        body {font-family: Arial, Helvetica, sans-serif;}
-
-        .modal {
-            display: none;
-            position: inherit;
-            z-index: 1;
-            padding-top: 100px;
-            left: 0;
-            top: 0;
-            overflow: auto;
-            background-color: rgb(0,0,0);
-            background-color: rgba(0,0,0,0.4);
-        }
-
-        .modal-content {
-            background-color: #96425fa8;
-            margin: auto;
-            padding: 20px;
-            border: 1px solid #888;
-            width: 50%;
-        }
-
+        /* The Close Button */
         .close {
             color: #aaaaaa;
             float: right;
@@ -60,7 +39,6 @@
             cursor: pointer;
         }
     </style>
-
 </head>
 <body>
 
@@ -102,7 +80,7 @@
                         <div class="intro">
                             <div class="intro--banner">
                                 <h1>Melb University<br> Inline Skating<br>Club</h1>
-                                <button id="myBtn">Join Us
+                                <button id="myBtn">Sign Up
                                     <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 150 118" style="enable-background:new 0 0 150 118;" xml:space="preserve">
                   <g transform="translate(0.000000,118.000000) scale(0.100000,-0.100000)">
                     <path d="M870,1167c-34-17-55-57-46-90c3-15,81-100,194-211l187-185l-565-1c-431,0-571-3-590-13c-55-28-64-94-18-137c21-20,33-20,597-20h575l-192-193C800,103,794,94,849,39c20-20,39-29,61-29c28,0,63,30,298,262c147,144,272,271,279,282c30,51,23,60-219,304C947,1180,926,1196,870,1167z"/>
@@ -110,15 +88,18 @@
                   </svg>
                                     <span class="btn-background"></span>
                                 </button>
-                                <div id="myModal" class="modal">
 
-                                    <div class="modal-content">
-                                        <span class="close">&times;</span>
-                                        <p>Sorry sign up will be only available during Clubs Day</p>
+                                    <div id="regModal" class="contact--lockup" style="width: 60%;position:inherit; z-index: 1000000">
+
+                                        <div class="modal" style="padding: 1px 10px 1px 10px; background-color: #96425fe0">
+
+                                            <span id="closeBtn" class="close">&times;</span>
+                                            <div class="modal--information">
+                                                <h2>Sorry</h2>
+                                                <p>Sign up will be only available during Clubs Day</p>
+                                            </div>
+                                        </div>
                                     </div>
-
-                                </div>
-
                                 <img src="assets/img/introduction-visual.png" alt="Welcome">
                             </div>
                             <div class="intro--options">
@@ -308,13 +289,16 @@
 <script src="assets/js/functions-min.js"></script>
 <script>
     // Get the modal
-    var modal = document.getElementById('myModal');
+    var modal = document.getElementById('regModal');
 
+    modal.style.display = "none";
     // Get the button that opens the modal
     var btn = document.getElementById("myBtn");
 
     // Get the <span> element that closes the modal
-    var span = document.getElementsByClassName("close")[0];
+    var close = document.getElementById("closeBtn");
+
+
 
     // When the user clicks the button, open the modal
     btn.onclick = function() {
@@ -322,7 +306,7 @@
     }
 
     // When the user clicks on <span> (x), close the modal
-    span.onclick = function() {
+    close.onclick = function() {
         modal.style.display = "none";
     }
 
