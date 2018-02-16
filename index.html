@@ -23,6 +23,44 @@
     <meta name="twitter:image" content="https://muisc.github.io/o/assets/img/o.png">
     <meta name="twitter:card" content="MUISC">
 
+    <style>
+        body {font-family: Arial, Helvetica, sans-serif;}
+
+        .modal {
+            display: none;
+            position: inherit;
+            z-index: 1;
+            padding-top: 100px;
+            left: 0;
+            top: 0;
+            overflow: auto;
+            background-color: rgb(0,0,0);
+            background-color: rgba(0,0,0,0.4);
+        }
+
+        .modal-content {
+            background-color: #96425fa8;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 50%;
+        }
+
+        .close {
+            color: #aaaaaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: #000;
+            text-decoration: none;
+            cursor: pointer;
+        }
+    </style>
+
 </head>
 <body>
 
@@ -64,7 +102,7 @@
                         <div class="intro">
                             <div class="intro--banner">
                                 <h1>Melb University<br> Inline Skating<br>Club</h1>
-                                <button class="cta">Join Us
+                                <button id="myBtn">Join Us
                                     <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 150 118" style="enable-background:new 0 0 150 118;" xml:space="preserve">
                   <g transform="translate(0.000000,118.000000) scale(0.100000,-0.100000)">
                     <path d="M870,1167c-34-17-55-57-46-90c3-15,81-100,194-211l187-185l-565-1c-431,0-571-3-590-13c-55-28-64-94-18-137c21-20,33-20,597-20h575l-192-193C800,103,794,94,849,39c20-20,39-29,61-29c28,0,63,30,298,262c147,144,272,271,279,282c30,51,23,60-219,304C947,1180,926,1196,870,1167z"/>
@@ -72,6 +110,15 @@
                   </svg>
                                     <span class="btn-background"></span>
                                 </button>
+                                <div id="myModal" class="modal">
+
+                                    <div class="modal-content">
+                                        <span class="close">&times;</span>
+                                        <p>Sorry sign up will be only available during Clubs Day</p>
+                                    </div>
+
+                                </div>
+
                                 <img src="assets/img/introduction-visual.png" alt="Welcome">
                             </div>
                             <div class="intro--options">
@@ -259,5 +306,32 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 <script>window.jQuery || document.write('<script src="assets/js/vendor/jquery-2.2.4.min.js"><\/script>')</script>
 <script src="assets/js/functions-min.js"></script>
+<script>
+    // Get the modal
+    var modal = document.getElementById('myModal');
+
+    // Get the button that opens the modal
+    var btn = document.getElementById("myBtn");
+
+    // Get the <span> element that closes the modal
+    var span = document.getElementsByClassName("close")[0];
+
+    // When the user clicks the button, open the modal
+    btn.onclick = function() {
+        modal.style.display = "block";
+    }
+
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function() {
+        modal.style.display = "none";
+    }
+
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+</script>
 </body>
 </html>
