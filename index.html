@@ -106,7 +106,8 @@
                         <div class="intro" >
                             <div class="intro--banner" >
                                 <h1><a style="color:blue; text-shadow: 0px 2px #035cff;">Melb Uni</a><br> Inline Skating<br>Club</h1>
-                                <button id="myBtn" onclick="window.open('https://docs.google.com/forms/d/e/1FAIpQLSenC22tC-70-idr-hIYdhQ2g81yGukivmBhCIC9wqDxAOe8Ew/viewform?usp=sf_link')">Sign Up
+                                <button id="myBtn">Sign Up
+                                    <!--onclick="window.open('')"-->
                                     <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 150 118" style="enable-background:new 0 0 150 118;" xml:space="preserve">
                   <g transform="translate(0.000000,118.000000) scale(0.100000,-0.100000)">
                     <path d="M870,1167c-34-17-55-57-46-90c3-15,81-100,194-211l187-185l-565-1c-431,0-571-3-590-13c-55-28-64-94-18-137c21-20,33-20,597-20h575l-192-193C800,103,794,94,849,39c20-20,39-29,61-29c28,0,63,30,298,262c147,144,272,271,279,282c30,51,23,60-219,304C947,1180,926,1196,870,1167z"/>
@@ -115,18 +116,18 @@
                                     <span class="btn-background"></span>
                                 </button>
 
-                                <!--<div id="regModal" class="contact&#45;&#45;lockup"-->
-                                     <!--style="width: 60%;position:inherit; z-index: 1000000">-->
+                                <div id="regModal" class="contact--lockup"
+                                     style="width: 60%;position:inherit; z-index: 1000000">
 
-                                    <!--<div class="modal" style="padding: 1px 10px 1px 10px; background-color: #96425fe0">-->
+                                    <div class="modal" style="padding: 1px 10px 1px 10px; background-color: #96425fe0">
 
-                                        <!--<span id="closeBtn" class="close">&times;</span>-->
-                                        <!--<div class="modal&#45;&#45;information">-->
-                                            <!--<h2>Sorry</h2>-->
-                                            <!--<p>Sign up is only available during Clubs Day</p>-->
-                                        <!--</div>-->
-                                    <!--</div>-->
-                                <!--</div>-->
+                                        <span id="closeBtn" class="close">&times;</span>
+                                        <div class="modal--information">
+                                            <h2>Sorry</h2>
+                                            <p>Sign up is only available during Clubs Day. Feel free to come down any session and say hello!!!</p>
+                                        </div>
+                                    </div>
+                                </div>
                                 <img src="assets/img/introduction-visual.png" alt="Welcome">
                             </div>
                             <div class="intro--options">
@@ -324,8 +325,8 @@
     var close = document.getElementById("closeBtn");
 
     btn.onclick = function () {
-        <!--modal.style.display = "block";-->
-        window.location = 'https://docs.google.com/forms/d/e/1FAIpQLSenC22tC-70-idr-hIYdhQ2g81yGukivmBhCIC9wqDxAOe8Ew/viewform?usp=sf_link';
+        <!--window.location = '';-->
+        modal.style.display = "block";
     }
 
     close.onclick = function () {
