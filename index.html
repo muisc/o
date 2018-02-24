@@ -11,8 +11,9 @@
     <meta name="application-name" content="MUISC"/>
     <link rel="stylesheet" href="assets/css/main.css">
     <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="stylesheet" media="screen" href="assets/css/particles/style.css">
 
-    <meta property="fb:pages" content="1312998712139870" />
+    <meta property="fb:pages" content="1312998712139870"/>
     <meta property="og:title" content="MUISC">
     <meta property="og:description" content="Melbourne University Inline Skating Club">
     <meta property="og:image" content="https://muisc.github.io/welcome/assets/img/o.png">
@@ -47,17 +48,40 @@
 <!-- notification for small viewports and landscape oriented smartphones -->
 <div class="device-notification">
     <a class="device-notification--logo" href="https://muisc.github.io/welcome/">
-        <img style="height:100px;width:100px" src="assets/img/logo.png"  alt="MUISC">
+        <img style="height:100px;width:100px" src="assets/img/logo.png" alt="MUISC">
         <p></p>
     </a>
     <p class="device-notification--message">MUISC</p>
 </div>
 
 <div class="perspective effect-rotate-left">
+
     <div class="container">
+        <script src="assets/js/particles/particles.js"></script>
+        <script src="assets/js/particles/app.js"></script>
+        <script>
+            var count_particles, stats, update;
+            stats = new Stats;
+            stats.setMode(0);
+            stats.domElement.style.position = 'absolute';
+            stats.domElement.style.left = '0px';
+            stats.domElement.style.top = '0px';
+            document.body.appendChild(stats.domElement);
+            count_particles = document.querySelector('.js-count-particles');
+            update = function() {
+                stats.begin();
+                stats.end();
+                if (window.pJSDom[0].pJS.particles && window.pJSDom[0].pJS.particles.array) {
+                    count_particles.innerText = window.pJSDom[0].pJS.particles.array.length;
+                }
+                requestAnimationFrame(update);
+            };
+            requestAnimationFrame(update);
+        </script>
+
         <div class="outer-nav--return"></div>
         <div id="viewport" class="l-viewport">
-            <div class="l-wrapper">
+            <div class="l-wrapper" >
                 <header class="header">
                     <a class="header--logo" href="https://muisc.github.io/welcome/">
                         <img src="assets/img/logo.png" style="width:75px;height:75px" alt="MUISC">
@@ -79,10 +103,10 @@
                 </nav>
                 <ul class="l-main-content main-content">
                     <li class="l-section section section--is-active">
-                        <div class="intro">
-                            <div class="intro--banner">
+                        <div class="intro" >
+                            <div class="intro--banner" >
                                 <h1><a style="color:blue; text-shadow: 0px 2px #035cff;">Melb Uni</a><br> Inline Skating<br>Club</h1>
-                                <button id="myBtn">Sign Up
+                                <button id="myBtn" onclick="window.open('https://docs.google.com/forms/d/e/1FAIpQLSenC22tC-70-idr-hIYdhQ2g81yGukivmBhCIC9wqDxAOe8Ew/viewform?usp=sf_link')">Sign Up
                                     <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 150 118" style="enable-background:new 0 0 150 118;" xml:space="preserve">
                   <g transform="translate(0.000000,118.000000) scale(0.100000,-0.100000)">
                     <path d="M870,1167c-34-17-55-57-46-90c3-15,81-100,194-211l187-185l-565-1c-431,0-571-3-590-13c-55-28-64-94-18-137c21-20,33-20,597-20h575l-192-193C800,103,794,94,849,39c20-20,39-29,61-29c28,0,63,30,298,262c147,144,272,271,279,282c30,51,23,60-219,304C947,1180,926,1196,870,1167z"/>
@@ -91,27 +115,29 @@
                                     <span class="btn-background"></span>
                                 </button>
 
-                                    <div id="regModal" class="contact--lockup" style="width: 60%;position:inherit; z-index: 1000000">
+                                <!--<div id="regModal" class="contact&#45;&#45;lockup"-->
+                                     <!--style="width: 60%;position:inherit; z-index: 1000000">-->
 
-                                        <div class="modal" style="padding: 1px 10px 1px 10px; background-color: #96425fe0">
+                                    <!--<div class="modal" style="padding: 1px 10px 1px 10px; background-color: #96425fe0">-->
 
-                                            <span id="closeBtn" class="close">&times;</span>
-                                            <div class="modal--information">
-                                                <h2>Sorry</h2>
-                                                <p>Sign up is only available during Clubs Day</p>
-                                            </div>
-                                        </div>
-                                    </div>
+                                        <!--<span id="closeBtn" class="close">&times;</span>-->
+                                        <!--<div class="modal&#45;&#45;information">-->
+                                            <!--<h2>Sorry</h2>-->
+                                            <!--<p>Sign up is only available during Clubs Day</p>-->
+                                        <!--</div>-->
+                                    <!--</div>-->
+                                <!--</div>-->
                                 <img src="assets/img/introduction-visual.png" alt="Welcome">
                             </div>
                             <div class="intro--options">
-                                <a href="http://www.sport.unimelb.edu.au/InlineSkating"  target="_blank">
-                                    <h3 >MU <span style="color: orangered">Sport</span></h3>
+                                <a href="http://www.sport.unimelb.edu.au/InlineSkating" target="_blank">
+                                    <h3>MU <span style="color: orangered">Sport</span></h3>
                                     <p>Melbourne University Sport</p>
                                 </a>
                                 <a href="https://www.baysideblades.com.au/" target="_blank">
                                     <h3>Bayside Blades Skates</h3>
-                                    <p> Supported by Bayside Blades! Members will receive a 10% discount from the shop! </p>
+                                    <p> Supported by Bayside Blades! Members will receive a 10% discount from the
+                                        shop! </p>
                                 </a>
                                 <a href="https://www.instagram.com/skate_with_unimelb/" target="_blank">
                                     <h3>Follows us on Instagram</h3>
@@ -143,10 +169,11 @@
                                                 <img src="assets/img/muisc/22.png" alt="Claire & Keven">
                                             </div>
                                             <p class="slider--item-title">Claire & Keven</p>
-                                            <p class="slider--item-description">World Inline Freestyle Championships 2016</p>
+                                            <p class="slider--item-description">World Inline Freestyle Championships
+                                                2016</p>
                                         </a>
                                     </li>
-                                    
+
                                     <li class="slider--item">
                                         <a href="#0">
                                             <div class="slider--item-image">
@@ -156,7 +183,7 @@
                                             <p class="slider--item-description">&nbsp;</p>
                                         </a>
                                     </li>
-                                    
+
                                     <li class="slider--item slider--item-left">
                                         <a href="#0">
                                             <div class="slider--item-image">
@@ -243,7 +270,7 @@
                                     <h3>Slalom Skating</h3>
                                 </a>
                                 <a href="#0">
-                                  <h3>Freeskating</h3>
+                                    <h3>Freeskating</h3>
                                 </a>
                                 <a href="#0">
                                     <h3>Inline Hockey</h3>
@@ -265,7 +292,8 @@
                                     <ul class="modal--options">
                                         <li><a href="https://www.facebook.com/groups/skatewithunimelb/" target="_blank">Facebook</a>
                                         </li>
-                                        <li><a href="https://www.instagram.com/skate_with_unimelb/" target="_blank">Instagram ⛸</a></li>
+                                        <li><a href="https://www.instagram.com/skate_with_unimelb/" target="_blank">Instagram
+                                            ⛸</a></li>
                                         <li><a href="mailto:kevenr@student.unimelb.edu.au">Contact Us</a></li>
                                     </ul>
                                 </div>
@@ -295,16 +323,16 @@
     var btn = document.getElementById("myBtn");
     var close = document.getElementById("closeBtn");
 
-    btn.onclick = function() {
+    btn.onclick = function () {
         <!--modal.style.display = "block";-->
-		window.location='https://docs.google.com/forms/d/e/1FAIpQLSenC22tC-70-idr-hIYdhQ2g81yGukivmBhCIC9wqDxAOe8Ew/viewform?usp=sf_link';
+        window.location = 'https://docs.google.com/forms/d/e/1FAIpQLSenC22tC-70-idr-hIYdhQ2g81yGukivmBhCIC9wqDxAOe8Ew/viewform?usp=sf_link';
     }
 
-    close.onclick = function() {
+    close.onclick = function () {
         modal.style.display = "none";
     }
 
-    window.onclick = function(event) {
+    window.onclick = function (event) {
         if (event.target == modal) {
             modal.style.display = "none";
         }
